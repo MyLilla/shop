@@ -10,31 +10,29 @@
     <div class="container"></div>
 </header>
 
-<div class="container text-center">
+<h1>Products</h1>
+<br><br>
 
-    <h1>Products</h1>
-    <br><br>
+<#list products as product>
+    <p>${product.title}</p> <br>
+    <p>${product.price}</p> <br>
 
-    <div>
-        <#list products as product>
-            <p>${product.title}</p> <br>
-            <p>${product.price}</p> <br>
+    <p><a href="/product-info/${product.id}">About product...</a></p>
+<#else>
+    <h3>There are no products</h3>
+</#list>
 
-            <h2><a href="/product-info/${product.id}">About product...</a></h2>
-        </#list>
-    </div>
 
-    <h2>Create new product:</h2>
-    <form action="/product/create" method="post">
-        <input name="title" type="text"> Title
-        <input name="description" type="text"> Description
-        <input name="price" type="number"> Price
-        <input name="city" type="text"> City
-        <input name="author" type="text"> Author
+<h1>Create new product:</h1>
+<form action="/product/create" method="post">
+    Title: <input name="title" type="text">  <br>
+    Description: <input name="description" type="text"> <br>
+    Price: <input name="price" type="number"> <br>
+    City: <input name="city" type="text"> <br>
+    Author: <input name="author" type="text"> <br>
 
-        <input type="submit" value="Add product">
-    </form>
-</div>
+    <input type="submit" value="Add product">
+</form>
 
 </body>
 </html>

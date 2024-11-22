@@ -10,20 +10,15 @@
     <div class="container"></div>
 </header>
 
-<div class="container text-center">
-
     <h1>${product.title}</h1>
     <br><br>
 
-    <div>
         <h2>About:</h2> <br>
         <p>${product.description}</p> <br>
         <p>${product.city}</p> <br>
         <p>${product.author}</p> <br>
-    </div>
 
-    <h2><a href="/product/delete/${product.id}">Delete product...</a></h2>
-</div>
+    <h1><a href="/product/delete/${product.id}">Delete product</a></h1>
 
 </body>
 </html>
