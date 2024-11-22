@@ -5,8 +5,12 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.time.LocalDateTime;
+import java.util.ArrayList;
+import java.util.List;
+
 @Entity
-@Table (name = "products", schema = "shop")
+@Table(name = "products", schema = "shop")
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
@@ -30,4 +34,23 @@ public class Product {
 
     @Column(name = "author", length = 30)
     private String author;
+
+    @Column(name = "creating_date")
+    private LocalDateTime creatingDate;
+
+    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY, mappedBy = "product")
+    private List<Image> images = new ArrayList<>();
+
+    @Column(name = "preview_image_id")
+    private Long previewImageId;
+
+    @PrePersist
+    private void init() {
+        this.creatingDate = LocalDateTime.now();
+    }
+
+    public void addImage(Image image) {
+        image.setProduct(this);
+        images.add(image);
+    }
 }

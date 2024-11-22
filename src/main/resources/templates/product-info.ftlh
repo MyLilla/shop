@@ -10,15 +10,20 @@
     <div class="container"></div>
 </header>
 
-    <h1>${product.title}</h1>
-    <br><br>
+<h1>${product.title}</h1>
+<br><br>
 
-        <h2>About:</h2> <br>
-        <p>${product.description}</p> <br>
-        <p>${product.city}</p> <br>
-        <p>${product.author}</p> <br>
+<#list product.images as image>
+    <img src="/image/${image.id}" height="60px"/> <br>
 
-    <h1><a href="/product/delete/${product.id}">Delete product</a></h1>
+    <p><a href="/image/delete/${image.id}">Delete photo</a></p>
+</#list>
+<h2>About:</h2> <br>
+<p>${product.description}</p> <br>
+<p>${product.city}</p> <br>
+<p>${product.author}</p> <br>
+
+<h1><a href="/product/delete/${product.id}">Delete product</a></h1>
 
 </body>
 </html>

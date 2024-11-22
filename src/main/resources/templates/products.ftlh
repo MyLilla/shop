@@ -24,13 +24,16 @@
 
 
 <h1>Create new product:</h1>
-<form action="/product/create" method="post">
-    Title: <input name="title" type="text">  <br>
+<form action="/product/create" method="post" enctype="multipart/form-data">
+    Title: <input name="title" type="text"> <br>
     Description: <input name="description" type="text"> <br>
     Price: <input name="price" type="number"> <br>
     City: <input name="city" type="text"> <br>
     Author: <input name="author" type="text"> <br>
 
+    Image 1: <input name="file1" type="file"> <br>
+    Image 2: <input name="file2" type="file"> <br>
+    Image 3: <input name="file3" type="file"> <br>
     <input type="submit" value="Add product">
 </form>
 
