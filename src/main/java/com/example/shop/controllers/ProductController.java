@@ -14,14 +14,10 @@ import org.springframework.web.multipart.MultipartFile;
 import java.io.IOException;
 
 @Controller
-@RequiredArgsConstructor  // ipv
+@RequiredArgsConstructor
 public class ProductController {
 
     public final ProductService productService;
-
-//    public ProductController(ProductService productService) {
-//        this.productService = productService;
-//    }
 
     @GetMapping("/")
     public String getProducts(@RequestParam(name = "title", required = false) String title, Model model) {

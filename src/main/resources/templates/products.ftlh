@@ -7,23 +7,21 @@
 <body>
 
 <header>
-    <div class="container"></div>
 </header>
 
-<h1>Products</h1>
+<h2>Products | <a href="/login">Enter</a></h2>
 <br><br>
 
 <#list products as product>
-    <p>${product.title}</p> <br>
-    <p>${product.price}</p> <br>
+    <p>${product.title}</p>
+    <p>${product.price}</p>
 
     <p><a href="/product-info/${product.id}">About product...</a></p>
 <#else>
     <h3>There are no products</h3>
 </#list>
 
-
-<h1>Create new product:</h1>
+<h2>Create new product:</h2>
 <form action="/product/create" method="post" enctype="multipart/form-data">
     Title: <input name="title" type="text"> <br>
     Description: <input name="description" type="text"> <br>
