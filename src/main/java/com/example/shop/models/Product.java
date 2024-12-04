@@ -32,9 +32,6 @@ public class Product {
     @Column(name = "city", length = 25)
     private String city;
 
-    @Column(name = "author", length = 30)
-    private String author;
-
     @Column(name = "creating_date")
     private LocalDateTime creatingDate;
 
@@ -43,6 +40,10 @@ public class Product {
 
     @Column(name = "preview_image_id")
     private Long previewImageId;
+
+    @ManyToOne(cascade = CascadeType.REFRESH, fetch = FetchType.EAGER)
+    @JoinColumn
+    private User user;
 
     @PrePersist
     private void init() {

@@ -14,16 +14,15 @@
 <br><br>
 
 <#list product.images as image>
-    <img src="/image/${image.id}" height="60px"/> <br>
-
+    <img src="/image/${image.id}" height="60px"/>
     <p><a href="/image/delete/${image.id}">Delete photo</a></p>
 </#list>
-<h2>About:</h2> <br>
+<h4>About:</h4> <br>
 <p>${product.description}</p> <br>
 <p>${product.city}</p> <br>
-<p>${product.author}</p> <br>
+<p>${product.user.name}</p> <br>
 
-<h1><a href="/product/delete/${product.id}">Delete product</a></h1>
+<h3><a href="/product/delete/${product.id}">Delete product</a></h3>
 
 </body>
 </html>
