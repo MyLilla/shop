@@ -6,23 +6,20 @@
 </head>
 <body>
 
-<header>
-    <div class="container"></div>
-</header>
-
-<h1>${product.title}</h1>
-<br><br>
+<h1>Shop Flip-Flop</h1>
+<hr>
+<h4>About product: </h4>
 
 <#list product.images as image>
     <img src="/image/${image.id}" height="60px"/>
-    <p><a href="/image/delete/${image.id}">Delete photo</a></p>
+    <b><a href="/image/delete/${image.id}">Delete photo</a></b>
 </#list>
-<h4>About:</h4> <br>
-<p>${product.description}</p> <br>
-<p>${product.city}</p> <br>
-<p>${product.user.name}</p> <br>
-
-<h3><a href="/product/delete/${product.id}">Delete product</a></h3>
+<b>Title: ${product.title}</b> <br>
+<b>Description: ${product.description}</b> <br>
+<b>Price: ${product.price} euro</b> <br>
+<b>City: ${product.city}</b> <br>
+<b>Author: <a href="/user-info/${product.user.id}">${product.user.name}</a></b> <br>
+<h6><a href="/product/delete/${product.id}">Delete product</a></h6>
 
 </body>
 </html>

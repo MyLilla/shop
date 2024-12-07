@@ -6,7 +6,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 @Entity
-@Table(name = "images")
+@Table(name = "images", schema = "shop")
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
@@ -35,5 +35,6 @@ public class Image {
     private byte[] bytes;
 
     @ManyToOne(cascade = CascadeType.REFRESH, fetch = FetchType.EAGER)
+    @JoinColumn
     private Product product;
 }

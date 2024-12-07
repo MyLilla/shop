@@ -11,7 +11,7 @@ import java.time.LocalDateTime;
 import java.util.*;
 
 @Entity
-@Table(name = "users")
+@Table(name = "users", schema = "shop")
 @Data
 @RequiredArgsConstructor
 public class User implements UserDetails {
@@ -20,7 +20,7 @@ public class User implements UserDetails {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
-    @Column(name = "email", length = 25)
+    @Column(name = "email", unique = true)
     private String email;
 
     @Column(name = "phone_number")
@@ -32,7 +32,8 @@ public class User implements UserDetails {
     @Column(name = "active")
     private boolean active;
 
-    @ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    @OneToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    @JoinColumn(name = "image_id")
     private Image avatar;
 
     @Column(name = "password")
@@ -44,7 +45,7 @@ public class User implements UserDetails {
     @Enumerated(EnumType.STRING)
     private Set<Role> roles = new HashSet<>();
 
-    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER, mappedBy = "user")
+    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY, mappedBy = "user")
     private List<Product> products = new ArrayList<>();
 
     @Column(name = "creating_date")

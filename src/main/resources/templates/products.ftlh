@@ -8,11 +8,10 @@
 
 <header>
 </header>
+<h1>Shop Flip-Flop</h1><hr>
 
-<h1>Products</h1>
-<hr>
 <#if user.email??>
-<#--    <h4>User: <i>${user.name}</i></h4>-->
+    <h4>User: <i>${user.name}</i></h4>
     <a href="/logout">LogOut</a>
 <#else>
     <a href="/login">Enter</a>
