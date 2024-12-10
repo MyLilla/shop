@@ -11,7 +11,7 @@
 <h4>About user: ${user.name}</h4>
 <br>
 
-<img src="/image/${user.avatar}" height="60px"/>
+<#--<img src="/image/${user.avatar}" height="60px"/>-->
 <b>Name: ${user.name}</b> <br>
 <b>Email: ${user.email}</b> <br>
 <b>Phone number: ${user.phoneNumber}</b> <br>

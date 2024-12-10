@@ -56,6 +56,12 @@ public class User implements UserDetails {
         this.creatingDate = LocalDateTime.now();
     }
 
+    public boolean isAdmin(User user) {
+        if (user.roles.contains(Role.ROLE_ADMIN)) {
+            return true;
+        } else return false;
+    }
+
     // Security
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
