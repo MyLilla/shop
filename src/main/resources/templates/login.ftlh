@@ -1,26 +1,20 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Shop</title>
-</head>
-<body>
+<#import "blocks/template.ftlh" as t>
+<@t.template user>
+<h1 style="text-align: center">Log in: </h1>
 
-<header>
-</header>
-<h1>Shop Flip-Flop</h1><hr>
-
-<h2>Log in:</h2>
 <form action="/login" method="post">
-    Email: <input name="username" type="email"> <br>
-    Password: <input name="password" type="password"> <br>
-
-<#--    <input type="hidden" value="_csrf">-->
-    <input type="submit" value="Enter">
+    <div class="input-group mb-3">
+        <span class="input-group-text">Email: </span>
+        <input type="email" name="username" class="form-control" >
+    </div>
+    <div class="input-group mb-3">
+        <span class="input-group-text">Password: </span>
+        <input type="password" name="password" class="form-control">
+    </div>
+    <#--    <input type="hidden" value="_csrf">-->
+    <button type="submit" class="btn btn-primary">Enter</button>
 </form>
 
 <hr>
 <a href="/registration">Registration</a>
-
-</body>
-</html>
+</@t.template>

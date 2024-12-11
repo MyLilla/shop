@@ -1,32 +1,29 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Shop</title>
-</head>
-<body>
+<#import "blocks/template.ftlh" as t>
+<@t.template user>
 
-<header>
-</header>
-<h2>Products</h2>
-<br><br>
+    <h1 style="text-align: center">Registration</h1>
 
-<h2>Registration:</h2>
-<form action="/registration" method="post" enctype="multipart/form-data">
-    Name: <input name="name" type="text"> <br>
-    Email: <input name="email" type="email"> <br>
-    Password: <input name="password" type="password"> <br>
-    Phone Number: <input name="phoneNumber" type="number"> <br>
-    <#--    Photo: <input name="photo" type="file"> <br>-->
-    <#--    <input type="hidden" value="_csrf">-->
-    <input type="submit" value="Go">
-</form>
+    <form action="/registration" method="post" enctype="multipart/form-data">
+        <div class="input-group mb-3">
+            <span class="input-group-text">Name: </span>
+            <input name="name" type="text" class="form-control"> <br>
+        </div>
+        <div class="input-group mb-3">
+            <span class="input-group-text">Email: </span>
+            <input name="email" type="email" class="form-control"> <br>
+        </div>
+        <div class="input-group mb-3">
+            <span class="input-group-text">Password: </span>
+            <input name="password" type="password" class="form-control"> <br>
+        </div>
+        <div class="input-group mb-3">
+            <span class="input-group-text">Phone Number: </span>
+            <input name="phoneNumber" type="number" class="form-control"> <br>
+        </div>
+        <#--    Photo: <input name="photo" type="file"> <br>-->
+        <#--    <input type="hidden" value="_csrf">-->
+        <input type="submit" class="btn btn-primary" value="Go">
+    </form>
 
-<#--<#if errorMessage>-->
-<#--    <h1 style="color: red">${errorMessage}</h1>-->
-<#--</#if>-->
-
-<a href="/">Go back</a>
-
-</body>
-</html>
+    <a href="/">Go back</a>
+</@t.template>

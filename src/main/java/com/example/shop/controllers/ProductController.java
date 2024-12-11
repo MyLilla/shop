@@ -42,8 +42,9 @@ public class ProductController {
     }
 
     @GetMapping("/product-info/{id}")
-    public String getById(@PathVariable Long id, Model model) {
+    public String getById(@PathVariable Long id, Model model, Principal principal) {
         model.addAttribute("product", productService.getById(id));
+        model.addAttribute("user", productService.getByPrincipal(principal));
         return "product-info";
     }
 }
