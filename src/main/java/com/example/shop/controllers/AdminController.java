@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import java.security.Principal;
 import java.util.Map;
 
 @Controller
@@ -21,16 +22,17 @@ public class AdminController {
 
     private final UserService userService;
 
-    @GetMapping("/admin/users")
-    public String allUsers(Model model) {
+    @GetMapping("/admin")
+    public String allUsers(Model model, Principal principal) {
         model.addAttribute("users", userService.getAll());
+        model.addAttribute("user", userService.getUserByPrincipal(principal));
         return "admin";
     }
 
     @PostMapping("/admin/user/ban/{id}")
     public String userBan(@PathVariable Long id) {
         userService.banUser(id);
-        return "redirect:/admin/users";
+        return "redirect:/admin";
     }
 
     @GetMapping("/admin/user/edit/{user}")
@@ -41,8 +43,8 @@ public class AdminController {
     }
 
     @PostMapping("/admin/user/edit")
-    public String saveEditedUser(@RequestParam Long userId, @RequestParam Map<String, String> form) {
+    public String saveEditedUser(@RequestParam("userId") Long userId, @RequestParam Map<String, String> form) {
         userService.editRoles(userService.getById(userId), form);
-        return "redirect:admin/users";
+        return "redirect:/admin";
     }
 }
