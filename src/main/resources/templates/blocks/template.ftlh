@@ -4,6 +4,7 @@
     <head>
 
         <meta charset="utf-8">
+        <link rel="stylesheet" href="/static/css/style.css">
 
         <!-- Bootstrap CSS -->
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css"
@@ -19,22 +20,23 @@
                 <span class="navbar-brand mb-0 h1">Book-Shop Flip-Flop</span>
             </a>
             <div class="dropdown text-end">
-                <#if user.email??>
-                    <a href="/profile">
-                        <#--                    <img src="/static/images/avatar.png" alt="mdo"-->
-                        <#--                         width="32" height="32" class="rounded-circle">-->
-                        Photo-link to profile
-                    </a>
-                    <a href="/logout">LogOut</a> <br>
-                    <#if user.isAdmin(user)>
-                        <a href="/admin">Users</a>
+                <form class="container-fluid justify-content-start">
+                    <#if user.email??>
+                        <b href="/profile">
+                            <img src="/static/images/avatar.png" alt="mdo"
+                                 width="32" height="32" class="rounded-circle">
+                        </b>
+                        <a href="/logout" class="btn btn-outline-success me-2" type="button">LogOut</a>
+                        <#if user.isAdmin(user)>
+                            <a href="/admin" class="btn btn-sm btn-outline-secondary" type="button">Users</a>
+                        </#if>
+                    <#else>
+                        <button class="btn btn-outline-success me-2" type="button"
+                                onclick="window.location.href = '/login'">
+                            Enter
+                        </button>
                     </#if>
-                <#else>
-                    <button class="btn btn-light my-2 my-sm-0" type="button"
-                            onclick="window.location.href = '/login'">
-                        Enter
-                    </button>
-                </#if>
+                </form>
             </div>
         </div>
     </nav>

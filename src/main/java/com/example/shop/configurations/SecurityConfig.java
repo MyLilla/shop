@@ -19,7 +19,7 @@ import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
 @RequiredArgsConstructor
 @Slf4j
 @EnableMethodSecurity()
-public class SpringSecurity {
+public class SecurityConfig {
 
     private final UserDetailsService userDetailsService;
 
@@ -35,10 +35,11 @@ public class SpringSecurity {
         http
                 .csrf().disable()
                 .authorizeHttpRequests((authorize) -> authorize
-                        .requestMatchers("/registration/**").permitAll()
-                        .requestMatchers("/").permitAll()
-                        .requestMatchers("/user-info/**").permitAll()
-                        .requestMatchers("/product-info/**").permitAll()
+                        .requestMatchers("/", "/registration/**",
+                                "/user-info/**", "/product-info/**",
+                                "/static/**", "/image/**")
+                        .permitAll()
+
                         .requestMatchers("/product/create/").hasAnyRole("ADMIN", "USER")
                         .requestMatchers("/**").hasRole("ADMIN")
                 )
