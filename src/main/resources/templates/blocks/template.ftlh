@@ -14,21 +14,24 @@
         <title>Shop</title>
     </head>
     <body>
-    <nav class="navbar navbar-dark bg-dark">
-        <div class="container-fluid">
-            <a href="/">
-                <span class="navbar-brand mb-0 h1">Book-Shop Flip-Flop</span>
+    <!-- Navigation-->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container px-4 px-lg-5">
+            <a class="navbar-brand" href="/">
+                <span class="navbar-brand mb-0 h1">Shop Flip-Flop</span>
             </a>
+
             <div class="dropdown text-end">
-                <form class="container-fluid justify-content-start">
+                <#--                <form class="container-fluid justify-content-start">-->
+                <form class="d-flex">
                     <#if user.email??>
                         <b href="/profile">
                             <img src="/static/images/avatar.png" alt="mdo"
                                  width="32" height="32" class="rounded-circle">
                         </b>
-                        <a href="/logout" class="btn btn-outline-success me-2" type="button">LogOut</a>
+                        <a href="/logout" class="btn btn-outline-dark me-2" type="button"> LogOut </a>
                         <#if user.isAdmin(user)>
-                            <a href="/admin" class="btn btn-sm btn-outline-secondary" type="button">Users</a>
+                            <a href="/admin" class="btn btn-outline-danger" type="button"> Users </a>
                         </#if>
                     <#else>
                         <button class="btn btn-outline-success me-2" type="button"
@@ -40,10 +43,24 @@
             </div>
         </div>
     </nav>
+
+    <!-- Header-->
+    <header class="bg-dark py-5">
+        <div class="container px-4 px-lg-5 my-5">
+            <div class="text-center text-white">
+                <h1 class="display-4 fw-bolder">Shop in style</h1>
+                <p class="lead fw-normal text-white-50 mb-0">With this shop page you can do nothing</p>
+            </div>
+        </div>
+    </header>
+
     <div class="container mt-4">
         <#nested/>
     </div>
 
+    <footer class="py-5 bg-dark">
+        <div class="container"><p class="m-0 text-center text-white">LillaMy &copy; 2024</p></div>
+    </footer>
 
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
             integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"

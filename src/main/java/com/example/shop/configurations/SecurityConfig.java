@@ -40,7 +40,7 @@ public class SecurityConfig {
                                 "/static/**", "/image/**")
                         .permitAll()
 
-                        .requestMatchers("/product/create/").hasAnyRole("ADMIN", "USER")
+                        .requestMatchers("/product/**").hasAnyRole("ADMIN", "USER")
                         .requestMatchers("/**").hasRole("ADMIN")
                 )
                 .formLogin(form -> form
