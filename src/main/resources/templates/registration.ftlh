@@ -24,6 +24,8 @@
         <#--    <input type="hidden" value="_csrf">-->
         <input type="submit" class="btn btn-primary" value="Go">
     </form>
-
-    <a href="/">Go back</a>
+    <br><br>
+    <a href="/" class="btn btn-outline-dark mt-auto">Go back</a>
+    <br><br>
+    <br><br>
 </@t.template>

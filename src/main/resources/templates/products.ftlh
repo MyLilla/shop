@@ -34,21 +34,21 @@
         <div class="container">
             <form action="/product/create" method="post" enctype="multipart/form-data">
                 <div class="input-group mb-3">
-                    <span class="input-group-text">Title: </span>
-                    <input name="title" type="text">
+                    <label for="title" class="input-group-text">Title: </label>
+                    <input name="title" type="text" id="title">
                 </div>
                 <div class="input-group mb-3">
-                    <span class="input-group-text">Description: </span>
-                    <input name="description" type="text">
+                    <label for="description" class="input-group-text">Description: </label>
+                    <input name="description" type="text" id="description">
                 </div>
                 <div class="input-group mb-3">
-                    <span class="input-group-text">Price: </span>
-                    <input name="price" type="text" class="form-control">
+                    <label for="price" class="input-group-text">Price: </label>
+                    <input name="price" type="text" class="form-control" id="price">
                     <span class="input-group-text">.00 euro</span>
                 </div>
                 <div class="input-group mb-3">
-                    <label class="input-group-text">City: </label>
-                    <input name="city" type="text">
+                    <label for="city" class="input-group-text">City: </label>
+                    <input name="city" type="text" id="city">
                 </div>
 
                 <div class="mb-3">
@@ -66,7 +66,6 @@
                 <input type="submit" class="btn btn-primary" value="Add product">
             </form>
         </div>
-        <br><br>
         <br><br>
     </#if>
 </@t.template>

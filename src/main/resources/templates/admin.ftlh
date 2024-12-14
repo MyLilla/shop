@@ -38,12 +38,31 @@
 
     <hr>
     <h2>Create new user:</h2>
-    <form action="/admin/user/create/" method="post" enctype="multipart/form-data">
-        Name: <input name="name" type="text"> <br>
-        Email: <input name="email" type="email"> <br>
-        Phone number: <input name="phoneNumber" type="number"> <br>
-        Password: <input name="password" type="password"> <br>
-        Photo: <input name="photo" type="file"> <br>
-        <input type="submit" value="Add user">
-    </form>
+
+    <div class="container">
+        <form action="/admin/user/create/" method="post" enctype="multipart/form-data">
+            <div class="input-group mb-3">
+                <label for="name" class="input-group-text">Name: </label>
+                <input name="name" type="text" id="name">
+            </div>
+            <div class="input-group mb-3">
+                <label for="email" class="input-group-text">Email: </label>
+                <input name="email" type="email" id="email">
+            </div>
+            <div class="input-group mb-3">
+                <label for="phoneNumber" class="input-group-text">Phone number: </label>
+                <input name="phoneNumber" type="number" class="form-control" id="phoneNumber">
+            </div>
+            <div class="input-group mb-3">
+                <label for="password" class="input-group-text">Password: </label>
+                <input name="password" type="password" id="password">
+            </div>
+            <div class="mb-3">
+                <label for="photo" class="form-label primary">Image 1: </label>
+                <input class="input-group-text" name="photo" type="file" id="photo">
+            </div>
+            <input type="submit" class="btn btn-primary" value="Add user">
+        </form>
+    </div>
+    <br><br>
 </@t.template>
