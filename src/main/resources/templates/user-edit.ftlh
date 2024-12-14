@@ -9,8 +9,12 @@
 
             <label><input type="checkbox" name="${role}" ${user.roles?seq_contains(role)?string("checked", "")}>${role}
             </label>
+            <br>
         </#list>
-        <input type="hidden" name="userId" value="${user.id}"><br>
+        <input type="hidden" name="userId" value="${user.id}">
+        <br>
         <button type="submit" class="btn btn-primary">Save</button>
     </form>
+
+    <br><br>
 </@t.template>

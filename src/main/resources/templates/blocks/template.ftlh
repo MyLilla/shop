@@ -22,19 +22,20 @@
             </a>
 
             <div class="dropdown text-end">
-                <#--                <form class="container-fluid justify-content-start">-->
                 <form class="d-flex">
                     <#if user.email??>
                         <b href="/profile">
-                            <img src="/static/images/avatar.png" alt="mdo"
+                            <img style="margin-right: 10px;" src="/static/images/avatar.png" alt="mdo"
                                  width="32" height="32" class="rounded-circle">
                         </b>
-                        <a href="/logout" class="btn btn-outline-dark me-2" type="button"> LogOut </a>
+                        <a href="/logout" class="btn btn-outline-dark me-2" style="margin-right: 10px;" type="button">
+                            LogOut </a>
                         <#if user.isAdmin(user)>
-                            <a href="/admin" class="btn btn-outline-danger" type="button"> Users </a>
+                            <a href="/admin" class="btn btn-outline-danger" style="margin-right: 10px;" type="button">
+                                Users </a>
                         </#if>
                     <#else>
-                        <button class="btn btn-outline-success me-2" type="button"
+                        <button class="btn btn-outline-success me-2" type="button" style="margin-right: 10px;"
                                 onclick="window.location.href = '/login'">
                             Enter
                         </button>
