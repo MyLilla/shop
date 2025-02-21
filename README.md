@@ -21,15 +21,11 @@
 ✅ Delete products
 
 
-<h3><a>Build: </a></h3>
-
-```$ docker build -t shop .```
-
 <h3> <a>Lounch:</a></h3>
 
-```$ docker run -p 1111:8080 shop```
+```$ docker-compose up --build```
 
-link: ```localhost:1111/Shop```
+link: ```localhost:1111```
 
 <h3> <a>Technology</a></h3>
 
