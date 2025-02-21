@@ -1,34 +1,46 @@
-[![Typing SVG](https://readme-typing-svg.herokuapp.com?font=Fira+Code&pause=1000&width=435&lines=Shop)](https://git.io/typing-svg)
-<h2><a>web shop</a></h2>
+[![Typing SVG](https://readme-typing-svg.herokuapp.com?font=Fira+Code&pause=1000&width=435&lines=Shop Flip-Flop)](https://git.io/typing-svg)
+
+<h1><a> Online shop </a></h1>
+
+<h3> <a>Functions:</a> </h3>
+
+```User role:```
+
+✅ Registration/Login
+
+✅ See all products and create new
+
+✅ See detail information about product and seller
+
+```Admin role:```
+
+✅ See all users and ban/unban them
+
+✅ Change role for users
+
+✅ Delete products
 
 
-User can see all products of shop
-Open description of each product
-Create/Delete products
+<h3> <a>Lounch:</a></h3>
 
+```$ docker-compose up --build```
 
-<h3><a>Build: </a></h3>
+link: ```localhost:1111```
 
-```$ docker build -t shop .```
+<h3> <a>Technology</a></h3>
 
-<h3 ><a>Lounch:</a></h3>
+✅ Maven
+✅ Spring Web, Apache Freemarker, Bootstrap
+✅ Spring Data JPA, MySQL
+✅ Spring Security
+✅ lombok
 
-```$ docker run -p 1111:8080 shop```
+<h3> <a>Next update:</a></h3>
 
-link: ```localhost:1111/Shop```
+⚪ Edite and delete own products
 
-<h3 ><a>Description of classes</a></h3>
+⚪ Edite profile and add avatar
 
+⚪ Add product in the card
 
->Package ```main/java/com/example/shop``` has subpackage:
-- ```controllers``` - main object structures and interface
-- ```models``` - app's exceptions
-- ```services``` - contains application business logic and quest content
-
-
-<h3><a>Technology</a></h3>
-
-- Maven
-- Spring Web, Apache Freemarker
-- Spring Data JPA, MySQL
-- lombok
+⚪ Text to the seller
