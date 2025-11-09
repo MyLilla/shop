@@ -1,6 +1,9 @@
 [![Typing SVG](https://readme-typing-svg.herokuapp.com?font=Fira+Code&pause=1000&width=435&lines=Shop Flip-Flop)](https://git.io/typing-svg)
 
 <h1><a> Online shop </a></h1>
+Demo project fof skill demonstration 
+<h3> <a>About:</a> </h3>
+Online-platform to sail and buy poroducts
 
 <h3> <a>Functions:</a> </h3>
 
@@ -29,13 +32,13 @@ link: ```localhost:1111```
 
 <h3> <a>Technology</a></h3>
 
-✅ Maven
-✅ Spring Web, Apache Freemarker, Bootstrap
-✅ Spring Data JPA, MySQL
-✅ Spring Security
-✅ lombok
+✅ Maven <br>
+✅ Spring Web, Apache Freemarker, Bootstrap <br>
+✅ Spring Data JPA, MySQL <br>
+✅ Spring Security <br>
+✅ lombok <br>
 
-<h3> <a>Next update:</a></h3>
+<h3> <a>Possible future:</a></h3>
 
 ⚪ Edite and delete own products
 
